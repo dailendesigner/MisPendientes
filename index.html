@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MisPendientes — Moderno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="3" width="22" height="18" rx="4" fill="url(#g)"/>
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#7C3AED"/>
+                <stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <h1>MisPendientes</h1>
+          <p class="subtitle">Tu lista, más viva.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="card new-task-card">
+      <div class="input-row">
+        <input id="task-input" type="text" placeholder="¿Qué necesitas hacer?" autocomplete="off" />
+        <button id="add-btn" class="btn-primary" title="Agregar tarea">Agregar</button>
+      </div>
+
+      <div class="meta-row">
+        <label class="checkbox-inline"><input type="checkbox" id="hide-done"> Ocultar completadas</label>
+        <div class="meta-actions">
+          <button id="clear-done" class="btn-ghost">Borrar completadas</button>
+          <button id="reset-seed" class="btn-ghost">Resetear semilla</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card tasks-card">
+      <ul id="tasks-list" class="tasks-list" aria-live="polite"></ul>
+      <p id="empty" class="empty-note">No hay pendientes. Añade tu primera tarea ✨</p>
+    </section>
+
+    <footer class="footer">
+      <small>Guardado en localStorage • Proyecto: MisPendientes</small>
+    </footer>
+  </main>
+
+  <template id="task-template">
+    <li class="task-item">
+      <label class="task-left">
+        <input class="task-check" type="checkbox" />
+        <div class="title-wrap">
+          <span class="task-title"></span>
+          <small class="task-meta"></small>
+        </div>
+      </label>
+      <div class="task-right">
+        <button class="edit-btn" title="Editar" aria-label="Editar">✏️</button>
+        <button class="delete-btn" title="Eliminar" aria-label="Eliminar">🗑️</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
